@@ -6,11 +6,12 @@
 </head>
 <body>
 <h1><a href="">사진 목록 페이지</a></h1>
+<h3><a href="{% url 'photo_post' %}">New Phost</a></h3>
 <section>
     {% for photo in photos %}
     <div>
         <h2>
-            <a href="">{{ photo.title }}</a>
+            <a href="{% url 'photo_detail' pk=photo.pk %}">{{ photo.title }}</a>
         </h2>
         <img
                 src={{ photo.image }}

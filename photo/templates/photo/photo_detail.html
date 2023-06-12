@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Photo App</title>
+</head>
+<body>
+<h1><a href="/">{{ photo.title }}</a></h1>
+<section>
+    <div>
+        <img src="{{ photo.image }}" alt="{{ photo.title }}" width="300" />
+        <p>{{ photo.author }},{{ photo.price }}원</p>
+    </div>
+</section>
+</body>
+</html>
