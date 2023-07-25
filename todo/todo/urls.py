@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import TodosAPIView, TodoAPIView, DoneTodoAPIView, DoneTodosAPIView
 
 urlpatterns = [
     path('', views.todo_list, name='todo_list'),
@@ -8,4 +9,8 @@ urlpatterns = [
     path('<int:pk>/edit/', views.todo_edit, name='todo_edit'),
     path('done/', views.done_list, name='done_list'),
     path('done/<int:pk>/', views.todo_done, name='todo_done'),
+    path('todo/', TodosAPIView.as_view()),
+    path('todo/<int:pk>/', TodoAPIView.as_view()),
+    path('done2/', DoneTodosAPIView.as_view()),
+    path('done2/<int:pk>/', DoneTodoAPIView.as_view()),
 ]
